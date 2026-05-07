@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raíz — Build Credit. Build Roots.</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Raíz 🌱</div>
+  </nav>
+
+  <header>
+    <h1>Build credit.<br>Build roots.</h1>
+    <p>The U.S. credit system, finally explained — in plain language, for immigrants.</p>
+    <div class="lang-toggle">
+      <button onclick="setLang('en')" id="btn-en" class="active">English</button>
+      <button onclick="setLang('es')" id="btn-es">Español</button>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="section-title" data-en="What makes up your credit score?" data-es="¿Qué compone tu puntaje de crédito?">
+      What makes up your credit score?
+    </h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-top">
+          <span class="pct">35%</span>
+          <span class="label" data-en="Payment History" data-es="Historial de Pagos">Payment History</span>
+        </div>
+        <p data-en="The most important factor. Pay every bill on time, every month. Even one late payment can hurt your score significantly."
+           data-es="El factor más importante. Paga cada cuenta a tiempo, cada mes. Un solo pago tardío puede afectar tu puntaje significativamente.">
+          The most important factor. Pay every bill on time, every month. Even one late payment can hurt your score significantly.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="pct">30%</span>
+          <span class="label" data-en="Amounts Owed" data-es="Deuda Actual">Amounts Owed</span>
+        </div>
+        <p data-en="How much of your available credit you're using. Try to stay below 30% of your limit. Example: if your card limit is $1,000, keep your balance under $300."
+           data-es="Cuánto de tu crédito disponible estás usando. Trata de mantenerte por debajo del 30% de tu límite. Ejemplo: si tu límite es $1,000, mantén tu saldo bajo $300.">
+          How much of your available credit you're using. Try to stay below 30% of your limit. Example: if your card limit is $1,000, keep your balance under $300.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="pct">15%</span>
+          <span class="label" data-en="Length of History" data-es="Antigüedad del Crédito">Length of History</span>
+        </div>
+        <p data-en="How long you've had credit. The longer, the better. This is why you should open your first card as soon as possible and never close it."
+           data-es="Cuánto tiempo llevas usando crédito. Entre más tiempo, mejor. Por eso debes abrir tu primera tarjeta lo antes posible y nunca cerrarla.">
+          How long you've had credit. The longer, the better. This is why you should open your first card as soon as possible and never close it.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="pct">10%</span>
+          <span class="label" data-en="New Credit" data-es="Crédito Nuevo">New Credit</span>
+        </div>
+        <p data-en="Every time you apply for a new credit card or loan, your score dips slightly. Don't apply for too many things at once."
+           data-es="Cada vez que solicitas una tarjeta o préstamo, tu puntaje baja un poco. No apliques a muchas cosas al mismo tiempo.">
+          Every time you apply for a new credit card or loan, your score dips slightly. Don't apply for too many things at once.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="pct">10%</span>
+          <span class="label" data-en="Credit Mix" data-es="Tipos de Crédito">Credit Mix</span>
+        </div>
+        <p data-en="Having different types of credit (a credit card, a car loan, etc.) helps your score. But don't take on debt just for this — it's the least important factor."
+           data-es="Tener diferentes tipos de crédito (tarjeta, préstamo de auto, etc.) ayuda tu puntaje. Pero no te endeudes solo por esto — es el factor menos importante.">
+          Having different types of credit (a credit card, a car loan, etc.) helps your score. But don't take on debt just for this — it's the least important factor.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    }
+  </script>
+
+</body>
+</html>
